@@ -48,7 +48,7 @@ const HomeIntro = () => {
 
                 return (
                   <Link key={product.id} href={`/products/${product.id}`} className="group w-full aspect-square ring-1 ring-gray-300 flex justify-center items-center rounded-md bg-white hover:ring-blue-600 relative">
-                    <Image src={product.images[3]} alt={product.title} width={300} height={300} className="bg-clip-border object-cover bg-center group-hover:scale-105 duration-300 rounded-lg" />
+                    <Image src={product.thumbnail} alt={product.title} width={300} height={300} className="bg-clip-border object-cover bg-center group-hover:scale-105 duration-300 rounded-lg" />
                     <div className="absolute bottom-5 left-5 flex items-center gap-5 ring-1 ring-gray-300 p-1 rounded-full font-bold text-sm text-gray-950 bg-white/60">
                       <h1 className="p-2">{product.title}</h1>
                       <p className="p-2 rounded-full bg-blue-600 text-white">${formattedNumber} USD</p>
@@ -62,7 +62,7 @@ const HomeIntro = () => {
                 const formattedNumber = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(totalPrice);
                 return (
                   <Link key={product.id} href={`/products/${product.id}`} className="group w-full aspect-square ring-1 ring-gray-300 flex justify-center items-center rounded-md bg-white hover:ring-blue-600 relative">
-                    <Image src={product.images[1]} alt={product.title} width={200} height={200} className="bg-clip-border bg-cover group-hover:scale-105 duration-300" />
+                    <Image src={product.thumbnail} alt={product.title} width={200} height={200} className="bg-clip-border bg-cover group-hover:scale-105 duration-300" />
                     <div className="absolute bottom-5 left-5 flex items-center gap-5 ring-1 ring-gray-300 bg-white/60 p-1 rounded-full font-bold text-sm text-gray-950">
                       <h1 className="p-2">{product.title}</h1>
                       <p className="p-2 rounded-full bg-blue-600 text-white">${formattedNumber} USD</p>
@@ -78,7 +78,7 @@ const HomeIntro = () => {
 
               return (
                 <Link key={product.id} href={`/products/${product.id}`} className="group md:basis-2/3 sm:basis-0 aspect-square ring-1 ring-gray-300 flex justify-center items-center rounded-md bg-white hover:ring-blue-600 relative">
-                  <Image src={product.images[0]} alt={product.title} width={550} height={250} className=" group-hover:scale-105 duration-300" />
+                  <Image src={product.thumbnail} alt={product.title} width={550} height={250} className=" group-hover:scale-105 duration-300" />
                   <div className="absolute lg:bottom-[30%] lg:left-[10%] bottom-5 left-5 flex items-center gap-5 ring-1 ring-gray-300 p-1 rounded-full font-bold text-sm text-gray-950 bg-white/60">
                     <h1 className="p-2 trunc">{product.title}</h1>
                     <p className="p-2 rounded-full bg-blue-600 text-white">${formattedNumber} USD</p>
@@ -95,9 +95,9 @@ const HomeIntro = () => {
 
               return (
                 <Link key={product.id} href={`/products/${product.id}`} className="group w-full aspect-video ring-1 ring-gray-300 flex justify-center items-center rounded-md bg-white hover:ring-blue-600 relative p-20 py-10">
-                  <Image src={product.images[3] || product.images[1]} alt={product.title} width={300} height={300} className="bg-clip-border object-cover bg-center group-hover:scale-105 duration-300 h-44 rounded-md" />
+                  <Image src={product.thumbnail || product.images[1]} alt={product.title} width={300} height={300} className="bg-clip-border object-cover bg-center group-hover:scale-105 duration-300 h-44 rounded-md" />
                   <div className="absolute bottom-5 left-5 flex items-center ring-1 ring-gray-300 p-1 rounded-full font-bold text-sm text-gray-950 bg-white/80">
-                    <h1 className="py-1 px-2 line-clamp-1 w-28">{product.title}</h1>
+                    <h1 className="py-1 px-2 line-clamp-1">{product.title}</h1>
                     <p className="p-2 truncate rounded-full bg-blue-600 text-white">${formattedNumber} USD</p>
                   </div>
                 </Link>
